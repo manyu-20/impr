@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Form, Button, Container, Spinner } from 'react-bootstrap';
+import { Form, Button, Container, Spinner, Nav, Navbar } from 'react-bootstrap';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -70,7 +70,24 @@ const SummaryPage = ({ match }) => {
     }
   };
 
-  return (
+  return (<>
+  <Navbar bg="dark" data-bs-theme="dark" style={{ backgroundColor: '#444C54' }}>
+    <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav>
+            <Nav.Link href="#faq" style={{ color: 'white' }}>FAQ</Nav.Link>
+            <span className="navbar-text" style={{ color: 'white' }}>Welcome Ratra, Rishabh</span>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+      </Navbar>
+    <Container fluid className="mt-3">
+      <div className="d-flex align-items-center justify-content-between">
+        <img src="/company-logo.png" alt="Company Logo" />
+        <img src="/platform-logo.png" alt="Platform Logo" />
+      </div>
+    </Container>
     <Container className="py-4">
       <Form.Group className="mb-3">
         <Form.Label>JSON Text:</Form.Label>
@@ -91,6 +108,27 @@ const SummaryPage = ({ match }) => {
         </Button>
       )}
     </Container>
+    <footer style={{
+        position: 'fixed',
+        bottom: '0',
+        width: '100%',
+        backgroundColor: '#444C54',
+        color: 'white',
+        padding: '20px 0'
+      }}>
+      <Container>
+        <div className="d-flex align-items-center justify-content-between">
+          <div>
+            {/* Replace 'logo.png' with your company logo */}
+            <img src="logo.png" alt="Company Logo" style={{ maxWidth: '100px' }} />
+          </div>
+          <div>
+            <span style={{ fontSize: '18px' }}>Your Company Name</span>
+          </div>
+        </div>
+      </Container>
+    </footer>
+    </>
   );
 };
 

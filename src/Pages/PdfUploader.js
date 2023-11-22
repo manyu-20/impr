@@ -9,7 +9,7 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Worker
 import { Worker } from '@react-pdf-viewer/core'; // install this library
 import axios from 'axios';
-import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Spinner,Navbar, Nav } from 'react-bootstrap';
 
 
 // export default function PdfUploader() {
@@ -146,10 +146,26 @@ export default function PdfUploader() {
     }
   };
 
-  return (
+  return (<>
+    <Navbar bg="dark" data-bs-theme="dark" style={{ backgroundColor: '#444C54' }}>
+    <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav>
+            <Nav.Link href="#faq" style={{ color: 'white' }}>FAQ</Nav.Link>
+            <span className="navbar-text" style={{ color: 'white' }}>Welcome Ratra, Rishabh</span>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+      </Navbar>
+    <Container fluid className="mt-3">
+      <div className="d-flex align-items-center justify-content-between">
+        <img src="/company-logo.png" alt="Company Logo" />
+        <img src="/platform-logo.png" alt="Platform Logo" />
+      </div>
+    </Container>
     <div className='container'>
 
-    <br></br>
 
     
     
@@ -257,6 +273,20 @@ export default function PdfUploader() {
       </div>
 
     </div>
+    <footer style={{ backgroundColor: '#444C54', color: 'white', padding: '20px 0',marginTop: '30px' }}>
+      <Container>
+        <div className="d-flex align-items-center justify-content-between">
+          <div>
+            {/* Replace 'logo.png' with your company logo */}
+            <img src="logo.png" alt="Company Logo" style={{ maxWidth: '100px' }} />
+          </div>
+          <div>
+            <span style={{ fontSize: '18px' }}>Your Company Name</span>
+          </div>
+        </div>
+      </Container>
+    </footer>
+    </>
   )
 }
 
